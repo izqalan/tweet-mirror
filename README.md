@@ -27,7 +27,7 @@ ACCESS_TOKEN_SECRET= BOT_ACCESS_TOKEN_SECRET
 TARGET_USER_ID= MAIN_ACCOUNT_USER_ID
 ```
 
-To get userId for your account got to https://twitter.com/settings/your_twitter_data/account
+To get userId for your account go to https://twitter.com/settings/your_twitter_data/account
 
 
 ## Contributing
