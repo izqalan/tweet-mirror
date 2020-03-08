@@ -1,5 +1,5 @@
+'use strict'
 import {assert} from 'chai';
-import app from '../src/index';
 
 describe('Translator', function(){
   it('it should translate readable english text', async function(){
