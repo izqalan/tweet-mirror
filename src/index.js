@@ -27,7 +27,7 @@ stream.on('tweet', async function (data) {
 
 export function translateThis(tweet) {
   translate(tweet, { to: 'ja' }).then(res => {
-    // tweetThis(res.text);
+    tweetThis(res.text);
   }).catch(err => {
     console.error(err);
   });
