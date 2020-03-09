@@ -16,6 +16,7 @@ Describe how to install all development dependencies and how to run an automated
 ```sh
 git clone https://github.com/izqalan/tweet-mirror
 npm install
+npm run dev
 ```
 
 Populate .env with your twitter app credentials and your access token
