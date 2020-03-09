@@ -5,12 +5,19 @@ import translate, { languages } from '@vitalets/google-translate-api';
 
 var T = new Twit(config);
 
-var stream = T.stream('statuses/filter', { language: ['en'], follow: [process.env.TARGET_USER_ID], tweet_mode: 'extended' })
+var stream = T.stream('statuses/filter', { language: ['en'], follow: [process.env.TARGET_USER_ID]})
 
 stream.on('tweet', async function (data) {
-  var tweet = data.extended_tweet.full_text ? data.extended_tweet.full_text : data.text;
+
+  console.log(typeof data.extended_tweet)
+  console.log('1')
+  var tweet = data.extended_tweet == undefined || data.extended_tweet == null ? data.text : data.extended_tweet.full_text;
+  console.log('2')
   var rt = data.retweeted_status ? true : false;
   var mention = data.in_reply_to_screen_name ? true : false;
+  console.log('3')
+
+
   console.group(['Incoming tweet'])
   console.log(`[${process.env.TARGET_USER_ID}] tweeted: ${tweet}`)
   console.log(`[${process.env.TARGET_USER_ID}] is a RT? ${rt}`)
