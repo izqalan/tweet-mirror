@@ -9,13 +9,10 @@ var stream = T.stream('statuses/filter', { language: ['en'], follow: [process.en
 
 stream.on('tweet', async function (data) {
 
-  console.log(typeof data.extended_tweet)
-  console.log('1')
   var tweet = data.extended_tweet == undefined || data.extended_tweet == null ? data.text : data.extended_tweet.full_text;
-  console.log('2')
   var rt = data.retweeted_status ? true : false;
   var mention = data.in_reply_to_screen_name ? true : false;
-  console.log('3')
+
 
 
   console.group(['Incoming tweet'])
